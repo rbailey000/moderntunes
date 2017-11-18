@@ -1,10 +1,7 @@
-Ext.define('MTunes.view.grid.TunesGrid', {
+Ext.define('MTunes.view.TunesGrid', {
     extend: 'Ext.grid.Grid',
     xtype: 'tunesgrid',
     requires: [
-        // 'MTunes.view.grid.TunesGridController',
-        // 'MTunes.view.grid.TunesGridModel',
-
         'Ext.grid.column.Column',
         'Ext.grid.column.Template',
 
@@ -12,10 +9,6 @@ Ext.define('MTunes.view.grid.TunesGrid', {
         //'Ext.ux.rating.Picker'
     ],
 
-    controller: 'tunesgrid',
-    viewModel: {
-        type: 'tunesgrid'
-    },
     columns: [{
             text: 'Artist',
             dataIndex: 'sortArtist',
@@ -23,17 +16,19 @@ Ext.define('MTunes.view.grid.TunesGrid', {
         }, {
             xtype: 'templatecolumn',
             text: 'Title',
-            dataIndex: 'title'
+            dataIndex: 'title',
+            flex: 1.5,
         }, {
             text: 'Rating',
             dataIndex: 'release_date',
             width: 60,
-            align: 'right'
+            align: 'right',
+            width: 120
         }, {
             xtype: 'templatecolumn',
             text: 'Thumbnail',
             dataIndex: 'image',
-            //tpl: '',
+            tpl: '<img src={image} />',
             flex: 1
         }]
         //html: '<span style="font-size:24px;font-style:italic;color:red">Tunes Grid</span>'

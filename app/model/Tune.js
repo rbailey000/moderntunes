@@ -1,4 +1,4 @@
-Ext.define('Tunes.model.Tune', {
+Ext.define('MTunes.model.Tune', {
     extend: 'Ext.data.Model',
     requires: ['Ext.data.proxy.JsonP'],
     fields: [{

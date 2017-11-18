@@ -5,9 +5,8 @@ Ext.define('MTunes.view.main.Main', {
         'MTunes.view.main.MainController',
         'MTunes.view.main.MainModel',
 
-        'MTunes.view.grid.TunesGrid',
-
-        'MTunes.view.thumbnails.TunesView',
+        'MTunes.view.TunesGrid',
+        'MTunes.view.TunesView',
 
         'Ext.layout.Fit'
     ],
@@ -16,15 +15,14 @@ Ext.define('MTunes.view.main.Main', {
     viewModel: {
         type: 'main'
     },
-
     items: [{
-        title: 'View',
+        title: 'Thumbnails',
         xtype: 'tunesview',
         bind: {
             store: '{tunes}'
         },
         listeners: {
-            select: 'onSelect'
+            select: 'thumbsSelect'
         }
     }, {
         title: 'Grid',
@@ -33,7 +31,7 @@ Ext.define('MTunes.view.main.Main', {
             store: '{tunes}'
         },
         listeners: {
-            select: 'onSelect'
+            select: 'gridSelect'
         }
     }]
 });
